@@ -1,0 +1,223 @@
+/* ✨ خلفية متدرجة متحركة */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #1e3c72, #2a5298, #6dd5ed);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  color: #e0e0e0;
+  transition: background 0.5s, color 0.5s;
+  overflow-x: hidden;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌌 خلفية نجوم */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  opacity: 0.25;
+  animation: moveStars 100s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 10000px 10000px; }
+}
+
+/* 🧊 صندوق زجاجي */
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: 100px auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  padding: 40px 30px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+  transition: 0.4s;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+h2 {
+  margin-top: 25px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #00b4ff;
+}
+
+p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* 🌙 الوضع الفاتح */
+body.light-mode {
+  background: linear-gradient(120deg, #89f7fe, #66a6ff);
+  color: #1c1c1c;
+}
+
+body.light-mode .container {
+  background: rgba(255, 255, 255, 0.85);
+  color: #1c1c1c;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode .section-title {
+  color: #1c1c1c;
+}
+
+/* الأزرار */
+.btn {
+  display: inline-block;
+  background: #0078ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: transform 0.2s, background 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background: #005ecc;
+  transform: scale(1.05);
+}
+
+/* 🔒 واجهة تسجيل الدخول */
+#loginPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  width: 300px;
+  z-index: 1;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  outline: none;
+}
+
+.login-box input::placeholder {
+  color: #ddd;
+}
+
+/* 🔘 شريط التنقل */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar h3 {
+  margin: 0;
+  font-size: 1.3em;
+  color: #fff;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.navbar a:hover {
+  opacity: 0.7;
+}
+
+/* الصورة */
+#photo {
+  display: none;
+  width: 90%;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+#photo.visible {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
+footer span {
+  display: block;
+  margin-top: 5px;
+  color: #00b4ff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
